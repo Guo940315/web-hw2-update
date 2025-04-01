@@ -238,7 +238,7 @@
                     <div class="img-box">
                       <img src="images/c1.jpg" alt="">
                       <div class="detail-box">
-                        <button aria-label="icon">
+                        <button type="button" role="presentation" class="owl-prev" aria-label="last">
                           <img src="images/play-icon.png" alt="icon">
                         </button>
                         <h2>
@@ -592,7 +592,8 @@
       loop: true,
       margin: 10,
       nav: true,
-      navText: [],
+      navText: ['<span class="sr-only">上一張</span>',
+        '<span class="sr-only">下一張</span>'],
       autoplay: true,
       autoplayHoverPause: true,
       responsive: {
@@ -613,7 +614,8 @@
       loop: true,
       margin: 25,
       nav: true,
-      navText: [],
+      navText: ['<span class="sr-only">上一張</span>',
+        '<span class="sr-only">下一張</span>'],
       autoplay: true,
       autoplayHoverPause: true,
       responsive: {
