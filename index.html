@@ -574,17 +574,21 @@
   </div>
   <!-- end info section -->
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <script>
     $(document).ready(function () {
+      // 幫 owl-dot 加 aria-label
       $(".owl-carousel").on('initialized.owl.carousel', function () {
         $('.owl-dot').each(function (index) {
           $(this).attr('aria-label', '跳到第 ' + (index + 1) + ' 張幻燈片');
         });
       });
 
-      $(".owl-carousel").owlCarousel({
+      // 初始化所有 carousel（含 .owl-carousel 和 .owl_carousel1）
+      $(".owl-carousel, .owl_carousel1").owlCarousel({
         loop: true,
         margin: 10,
         nav: true,
@@ -603,71 +607,6 @@
     });
   </script>
 
-  <script>
-    function openNav() {
-      document.getElementById("myNav").classList.toggle("menu_width");
-      document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style");
-    }
-  </script>
-
-  <!-- owl carousel script -->
-  <script type="text/javascript">
-    $('.owl-carousel').on('initialized.owl.carousel', function(event) {
-      $('.owl-dot').each(function(index) {
-        $(this).attr('aria-label', '跳到第 ' + (index + 1) + ' 張幻燈片');
-      });
-    });
-
-    $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: true,
-      navText: ['<span class="sr-only">上一張</span>',
-        '<span class="sr-only">下一張</span>'],
-      autoplay: true,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 2
-        },
-        1000: {
-          items: 2
-        }
-      }
-    });
-
-
-    $(".owl_carousel1").owlCarousel({
-      loop: true,
-      margin: 25,
-      nav: true,
-      navText: ['<span class="sr-only">上一張</span>',
-        '<span class="sr-only">下一張</span>'],
-      autoplay: true,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 2
-        },
-        1000: {
-          items: 2
-        }
-      }
-    });
-  </script>
-  <script>
-    $('.owl-carousel').on('initialized.owl.carousel', function () {
-      $('.owl-dot').each(function (index) {
-        $(this).attr('aria-label', '跳到第 ' + (index + 1) + ' 張幻燈片');
-      });
-    });
-  </script>
   <!-- end owl carousel script -->
 
   <script>
