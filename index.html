@@ -577,6 +577,30 @@
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    $(document).ready(function () {
+      $(".owl-carousel").on('initialized.owl.carousel', function () {
+        $('.owl-dot').each(function (index) {
+          $(this).attr('aria-label', '跳到第 ' + (index + 1) + ' 張幻燈片');
+        });
+      });
+
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        navText: [
+          '<span class="sr-only">上一張</span>',
+          '<span class="sr-only">下一張</span>'
+        ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+          0: { items: 1 },
+          600: { items: 2 },
+          1000: { items: 2 }
+        }
+      });
+    });
   </script>
 
   <script>
