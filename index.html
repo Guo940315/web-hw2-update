@@ -599,14 +599,16 @@
     document.addEventListener("DOMContentLoaded", function () {
       const $carousel = $(".owl-carousel, .owl_carousel1");
 
-      // 等 DOM 完成後先加監聽
-      $carousel.on('initialized.owl.carousel', function () {
-        $('.owl-dot').each(function (index) {
-          $(this).attr('aria-label', '跳到第 ' + (index + 1) + ' 張幻燈片');
-        });
+      // 🌟 先監聽初始化事件，加 aria-label 給每顆 .owl-dot
+      $carousel.on("initialized.owl.carousel", function () {
+        setTimeout(function () {
+          $(".owl-dot").each(function (index) {
+            $(this).attr("aria-label", "跳到第 " + (index + 1) + " 張幻燈片");
+          });
+        }, 0); // 用 timeout 確保元素已經出現
       });
 
-      // 初始化 carousel（一次包含所有類別）
+      // ✅ 初始化 owl carousel
       $carousel.owlCarousel({
         loop: true,
         margin: 10,
@@ -625,8 +627,6 @@
       });
     });
   </script>
-
-
   <!-- end owl carousel script -->
 
 
