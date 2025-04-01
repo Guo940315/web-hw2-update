@@ -637,6 +637,13 @@
       }
     });
   </script>
+  <script>
+    $('.owl-carousel').on('initialized.owl.carousel', function () {
+      $('.owl-dot').each(function (index) {
+        $(this).attr('aria-label', '跳到第 ' + (index + 1) + ' 張幻燈片');
+      });
+    });
+  </script>
   <!-- end owl carousel script -->
 
   <script>
