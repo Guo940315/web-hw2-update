@@ -588,6 +588,12 @@
 
   <!-- owl carousel script -->
   <script type="text/javascript">
+    $('.owl-carousel').on('initialized.owl.carousel', function(event) {
+      $('.owl-dot').each(function(index) {
+        $(this).attr('aria-label', '跳到第 ' + (index + 1) + ' 張幻燈片');
+      });
+    });
+
     $(".owl-carousel").owlCarousel({
       loop: true,
       margin: 10,
